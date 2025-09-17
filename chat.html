@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat | Gbero</title>
+  <link rel="stylesheet" href="static/style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-3h5AQX56Mjk2DWuN1H5Nl6iGjHBu5OVnpoEHQbK6y9m16HlYaaYeX7qmQdOVwBr7nTQsF1g0WsBANDYTGP6xOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">Gbero</a>
+    </nav>
+  </header>
+  <main class="content">
+    <div id="chatDetails" class="chat-details">
+      <!-- Trip info will be injected here -->
+    </div>
+    <div id="chatContainer" class="chat-container">
+      <!-- Messages will be shown here -->
+    </div>
+    <form id="messageForm" class="message-form" onsubmit="sendMessage(event)">
+      <input type="text" id="messageInput" placeholder="Type your message..." autocomplete="off" required />
+      <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send</button>
+    </form>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Gbero. All rights reserved. | <a href="privacy.html" style="color: #ffd54f; text-decoration: underline;">Privacy Policy</a></p>
+  </footer>
+  <!-- Cookie banner logic -->
+  <script src="static/cookies.js"></script>
+  <script src="static/script.js"></script>
+</body>
+</html>

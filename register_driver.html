@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driver Registration | Gbero</title>
+  <link rel="stylesheet" href="static/style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-3h5AQX56Mjk2DWuN1H5Nl6iGjHBu5OVnpoEHQbK6y9m16HlYaaYeX7qmQdOVwBr7nTQsF1g0WsBANDYTGP6xOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- PWA manifest for consistency -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#009688">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">Gbero</a>
+    </nav>
+  </header>
+  <main class="content">
+    <h2>Driver Registration</h2>
+    <p class="subtitle">Join Gbero as a driver by providing your details below. Your information helps us verify your identity and vehicle.</p>
+    <form id="driverRegForm" class="registration-form">
+      <div class="form-group">
+        <label for="driverFullName"><i class="fa-solid fa-user"></i> Full Name</label>
+        <input type="text" id="driverFullName" required placeholder="e.g., Adebayo Adekunle" />
+      </div>
+      <div class="form-group">
+        <label for="driverPhone"><i class="fa-solid fa-phone"></i> Phone Number</label>
+        <input type="tel" id="driverPhone" required placeholder="e.g., 08012345678" />
+      </div>
+      <div class="form-group">
+        <label for="driverEmail"><i class="fa-solid fa-envelope"></i> Email Address</label>
+        <input type="email" id="driverEmail" required placeholder="e.g., example@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="driverCarModel"><i class="fa-solid fa-car"></i> Car Model</label>
+        <input type="text" id="driverCarModel" required placeholder="e.g., Toyota Corolla" />
+      </div>
+      <div class="form-group">
+        <label for="driverPlate"><i class="fa-solid fa-id-card"></i> Car Plate Number</label>
+        <input type="text" id="driverPlate" required placeholder="e.g., ABC-1234" />
+      </div>
+      <div class="form-group">
+        <label for="driverLicenseNumber"><i class="fa-solid fa-id-badge"></i> Driver's Licence Number</label>
+        <input type="text" id="driverLicenseNumber" required placeholder="Enter your licence number" />
+      </div>
+      <div class="form-group">
+        <label for="driverNIN"><i class="fa-solid fa-fingerprint"></i> National Identification Number (NIN)</label>
+        <input type="text" id="driverNIN" required placeholder="Enter your NIN" />
+      </div>
+      <div class="form-group">
+        <label for="driverLicenseFile"><i class="fa-solid fa-upload"></i> Upload Driver's Licence Document (optional)</label>
+        <input type="file" id="driverLicenseFile" accept="image/*,.pdf" />
+      </div>
+      <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Register</button>
+      <p id="driverRegSuccess" class="subtitle hidden" style="color: green; margin-top: 1rem;">Registration successful! You can now schedule trips.</p>
+    </form>
+    <hr style="margin: 2rem 0;">
+    <button id="downloadRegistration" class="btn btn-secondary" onclick="downloadData()"><i class="fa-solid fa-download"></i> Download Registration Data</button>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Gbero. All rights reserved. | <a href="privacy.html" style="color: #ffd54f; text-decoration: underline;">Privacy Policy</a></p>
+  </footer>
+  <!-- SheetJS library for Excel generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="static/registration.js"></script>
+  <!-- Cookie banner logic -->
+  <script src="static/cookies.js"></script>
+</body>
+</html>

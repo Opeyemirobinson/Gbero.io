@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driver – Schedule a Trip | Gbero</title>
+  <link rel="stylesheet" href="static/style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-3h5AQX56Mjk2DWuN1H5Nl6iGjHBu5OVnpoEHQbK6y9m16HlYaaYeX7qmQdOVwBr7nTQsF1g0WsBANDYTGP6xOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">Gbero</a>
+    </nav>
+  </header>
+  <main class="content">
+    <h2>Driver Dashboard</h2>
+    <p class="subtitle">Schedule new trips and manage your ride requests.</p>
+    <div class="driver-name-form">
+      <label for="driverName">Enter your name:</label>
+      <input type="text" id="driverName" placeholder="e.g., Adebayo" />
+      <button class="btn btn-primary" onclick="setDriverName()">Set Name</button>
+    </div>
+    <!-- Wallet section for drivers -->
+    <div id="driverWalletSection" class="wallet-section hidden">
+      <h3>Your Wallet</h3>
+      <p>Balance: ₦<span id="driverWalletBalance">0</span></p>
+      <div class="wallet-actions">
+        <input type="number" id="driverDepositAmount" min="0" placeholder="Top up amount" />
+        <button class="btn btn-secondary" onclick="depositToDriver()"><i class="fa-solid fa-plus"></i> Deposit</button>
+      </div>
+    </div>
+    <div id="scheduleTripForm" class="trip-form hidden">
+      <h3>Schedule a New Trip</h3>
+      <form id="tripForm" onsubmit="createTrip(event)">
+        <div class="form-group">
+          <label for="origin"><i class="fa-solid fa-location-dot"></i> Origin</label>
+          <input type="text" id="origin" required placeholder="Start point (e.g., Ikeja)" />
+        </div>
+        <div class="form-group">
+          <label for="destination"><i class="fa-solid fa-flag-checkered"></i> Destination</label>
+          <input type="text" id="destination" required placeholder="End point (e.g., Ibadan)" />
+        </div>
+        <div class="form-group">
+          <label><i class="fa-solid fa-arrows-rotate"></i> Trip Type</label>
+          <select id="tripType" required>
+            <option value="one-way">One Way</option>
+            <option value="round-trip">Return Trip</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="seats"><i class="fa-solid fa-users"></i> Seats Available</label>
+          <input type="number" id="seats" min="1" max="8" required />
+        </div>
+        <div class="form-group">
+          <label for="price"><i class="fa-solid fa-naira-sign"></i> Price per Seat (₦)</label>
+          <input type="number" id="price" min="0" step="0.01" required />
+        </div>
+        <div class="form-group">
+          <label for="departure"><i class="fa-solid fa-clock"></i> Departure Date &amp; Time</label>
+          <input type="datetime-local" id="departure" required />
+        </div>
+        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Schedule Trip</button>
+      </form>
+    </div>
+    <div id="yourTrips" class="trip-list hidden">
+      <h3>Your Scheduled Trips</h3>
+      <div id="tripsContainer"></div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Gbero. All rights reserved. | <a href="privacy.html" style="color: #ffd54f; text-decoration: underline;">Privacy Policy</a></p>
+  </footer>
+  <!-- Cookie banner logic -->
+  <script src="static/cookies.js"></script>
+  <script src="static/script.js"></script>
+  <!-- Google Maps JavaScript API for Places Autocomplete -->
+  <!-- Google Maps JavaScript API for Places Autocomplete -->
+  <!-- API key injected dynamically by build script -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgZ7_fBEsBTsh9V7X7jg-RP7IvkSSnL2k&libraries=places&callback=initAutocomplete"></script>
+</body>
+</html>

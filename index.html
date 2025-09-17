@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gbero – Connect Drivers &amp; Passengers</title>
+  <link rel="stylesheet" href="static/style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-3h5AQX56Mjk2DWuN1H5Nl6iGjHBu5OVnpoEHQbK6y9m16HlYaaYeX7qmQdOVwBr7nTQsF1g0WsBANDYTGP6xOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- PWA manifest and theme color -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#009688">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <h1 class="logo">Gbero</h1>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <!-- Updated banner image showing happy passengers in a car -->
+      <img src="static/images/home_banner.jpg" alt="Happy driver and passenger enjoying a ride" class="hero-image">
+      <div class="hero-text">
+        <h2>Ride Together, Save More</h2>
+        <p>Gbero connects passengers with car owners to share rides safely and affordably across Nigeria. Our seamless platform helps you plan trips, pay with ease and chat in real‑time.</p>
+        <div class="hero-buttons">
+          <a href="driver.html" class="btn btn-primary"><i class="fa-solid fa-car"></i> I’m a Driver</a>
+          <a href="passenger.html" class="btn btn-secondary"><i class="fa-solid fa-user"></i> I’m a Passenger</a>
+          <!-- Registration links for new users -->
+          <a href="register_driver.html" class="btn btn-primary"><i class="fa-solid fa-id-card"></i> Register as Driver</a>
+          <a href="register_passenger.html" class="btn btn-secondary"><i class="fa-solid fa-user-plus"></i> Register as Passenger</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unique Selling Proposition section -->
+    <section class="usp">
+      <div class="usp-container">
+        <h3>Why Choose Gbero?</h3>
+        <div class="usp-items">
+          <div class="usp-item">
+            <i class="fa-solid fa-road"></i>
+            <h4>Flexible Trips</h4>
+            <p>Plan one‑way or return journeys across Nigeria and find rides that fit your schedule.</p>
+          </div>
+          <div class="usp-item">
+            <i class="fa-solid fa-wallet"></i>
+            <h4>Secure Wallet</h4>
+            <p>Store funds in your in‑app wallet and pay for rides seamlessly without cash.</p>
+          </div>
+          <div class="usp-item">
+            <i class="fa-solid fa-comments"></i>
+            <h4>Real‑Time Chat</h4>
+            <p>Communicate instantly with drivers and fellow passengers to coordinate your trip.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section class="about">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="static/images/skyline.png" alt="Colourful Nigerian city skyline at sunset">
+        </div>
+        <div class="about-text">
+          <h3>About Gbero</h3>
+          <p>Gbero is Nigeria’s community‑driven ride‑sharing platform. We connect passengers and car owners to share rides, reduce travel costs and ease congestion. Whether you’re commuting within Lagos or heading to another city, Gbero makes it easy to find trusted drivers and fellow travellers. Our platform emphasises safety, convenience and affordability with secure wallets, flexible trip options and real‑time chat.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Gbero. All rights reserved. | <a href="privacy.html" style="color: #ffd54f; text-decoration: underline;">Privacy Policy</a></p>
+  </footer>
+  <!-- Register service worker for PWA functionality -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('static/sw.js').catch(function(err) {
+          console.error('Service worker registration failed:', err);
+        });
+      });
+    }
+  </script>
+  <!-- Cookie banner logic -->
+  <script src="static/cookies.js"></script>
+</body>
+</html>

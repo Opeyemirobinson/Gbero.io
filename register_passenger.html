@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passenger Registration | Gbero</title>
+  <link rel="stylesheet" href="static/style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-3h5AQX56Mjk2DWuN1H5Nl6iGjHBu5OVnpoEHQbK6y9m16HlYaaYeX7qmQdOVwBr7nTQsF1g0WsBANDYTGP6xOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#009688">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">Gbero</a>
+    </nav>
+  </header>
+  <main class="content">
+    <h2>Passenger Registration</h2>
+    <p class="subtitle">Register as a passenger to access shared rides across Nigeria. Your details remain confidential.</p>
+    <form id="passengerRegForm" class="registration-form">
+      <div class="form-group">
+        <label for="passengerFullName"><i class="fa-solid fa-user"></i> Full Name</label>
+        <input type="text" id="passengerFullName" required placeholder="e.g., Chioma Okafor" />
+      </div>
+      <div class="form-group">
+        <label for="passengerPhone"><i class="fa-solid fa-phone"></i> Phone Number</label>
+        <input type="tel" id="passengerPhone" required placeholder="e.g., 08023456789" />
+      </div>
+      <div class="form-group">
+        <label for="passengerEmail"><i class="fa-solid fa-envelope"></i> Email Address</label>
+        <input type="email" id="passengerEmail" required placeholder="e.g., you@example.com" />
+      </div>
+      <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Register</button>
+      <p id="passengerRegSuccess" class="subtitle hidden" style="color: green; margin-top: 1rem;">Registration successful! You can now join trips.</p>
+    </form>
+    <hr style="margin: 2rem 0;">
+    <button id="downloadRegistration" class="btn btn-secondary" onclick="downloadData()"><i class="fa-solid fa-download"></i> Download Registration Data</button>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Gbero. All rights reserved. | <a href="privacy.html" style="color: #ffd54f; text-decoration: underline;">Privacy Policy</a></p>
+  </footer>
+  <!-- SheetJS library for Excel generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="static/registration.js"></script>
+  <!-- Cookie banner logic -->
+  <script src="static/cookies.js"></script>
+</body>
+</html>
